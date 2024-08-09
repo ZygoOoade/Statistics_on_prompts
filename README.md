@@ -1,4 +1,4 @@
-We use the MATHS dataset of the article [Hendrycks & al. (2021)](https://arxiv.org/pdf/2103.03874).
+We use the MATHS dataset of [Hendrycks & al. (2021)](https://arxiv.org/pdf/2103.03874).
 
 In the file [Few_data_generation.ipynb](https://github.com/ZygoOoade/Statistics_on_prompts/blob/main/Few_data_generation.ipynb), we run the Gemini-Pro-1.5-exprimental-801 model on the first 10 dataset questions with a customized system prompt.
 As it stands, this file is limited to the generation of 10 responses.
