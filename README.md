@@ -1,7 +1,7 @@
-We use the MATHS dataset of [Hendrycks & al. (2021)](https://arxiv.org/pdf/2103.03874).
+We use the MATHS dataset of [Hendrycks & al. (2021)](https://arxiv.org/pdf/2103.03874) which contains 12,500 mathematical problems, along with their level of difficulty, the branch to which they belong, and the solution to each problem.
 
 * In the file [Few_data_generation.ipynb](https://github.com/ZygoOoade/Statistics_on_prompts/blob/main/Few_data_generation.ipynb), we run the Gemini-Pro-1.5-exprimental-801 model on the first 10 dataset questions with a customized system prompt.
-As it stands, this file is limited to the generation of 10 responses.
+As it stands, this file is limited to the generation of 10 responses on 10 problems from the dataset.
 * In the [Rating gemini's responses.ipynb](https://github.com/ZygoOoade/Statistics_on_prompts/blob/main/Rating%20gemini's%20responses.ipynb) file is simply used by Gemini-Pro to evaluate the quality of Gemini-Pro-Experiment-801 responses on the 10 maths problems.
 * As a result, Gemini-pro-express-801 got 9 out of 10 maths problems right.
 
