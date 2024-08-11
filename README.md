@@ -1,5 +1,3 @@
-
-
 ## Materials
 
 This directory accounts for several notebooks aimed at measuring the performance of a prompt 𝒫 on exercises.
@@ -24,7 +22,7 @@ We then use an API key to submit the exercises to an LLM. In this case, we use G
 
 ### Extracting an exercise from the data for input to the LLM
 
-It's easy to extract exercises from loaded data, e.g. 
+It's easy to extract exercises from loaded data :
 ```
 ds['train'][i]
 ```
@@ -40,11 +38,22 @@ And we put it in a `csv` file
 ```
 csv_writer.writerow([response])
 ```
-
+### Iterate 
 We then use a `for` loop to iterate this over as many exercises as desired. For example, we can serially give the LLM the first 100 exercises of the training data with 100 API calls, and, at the end of each loop, store the LLM's response in the same `csv` file.
+<br>
+Once the loop is complete, the result is a table containing one column and 100 rows, where each row $`i`$ contains the LLM's response to the $`i`$-th exercise.
+<br>
+We can now put three columns in parallel: firstly, the statements of the 100 exercises; secondly, the LLM's answers to each of these 100 exercises; and thirdly, the answers to these 100 exercises. This can be visualized as follows: 
+| Exercise Statement | LLM's Solution | Correction |
+|:-------------------|:---------------|:-----------|
+| Exercise 1 statement | LLM's solution to exercise 1 | Correction to exercise 1 |
+| Exercise 2 statement | LLM's solution to exercise 2 | Correction to exercise 2 |
+| $`\hspace{1.6cm} ⋮`$ | $`\hspace{2.4cm} ⋮`$ | $`\hspace{2cm} ⋮`$ |
+| Exercise *n* statement | LLM's solution to exercise *n* | Correction to exercise *n* |
 
+We propose to "merge" together the statement of problem _i_, the LLM solution to this problem _i_ and the answer to this problem _i_ in a single message with a tagged format. This is achieved by the following code:
 
-### Building a prompt for the verification model
+### Building prompts for the verification model
 
 ```
 def concatenate_cells(cell0, cell1, cell2):
