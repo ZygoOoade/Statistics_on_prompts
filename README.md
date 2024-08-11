@@ -1,10 +1,15 @@
 
 
-## Procedure
+## Materials
 
 This directory accounts for several notebooks aimed at measuring the performance of a prompt 𝒫 on data. As it is, these are mathematical exercises and the data used contain both exercises and their answer keys.
+We use the MATHS dataset of [Hendrycks et al. (2021)](https://arxiv.org/pdf/2103.03874) which contains 12,500 mathematical problems, along with their level of difficulty, the branch to which they belong, and the solution to each problem.
 
-First, we import the data we want to use. For example, we use :
+## Procedure
+
+### Load the data
+
+First, we import the data we want to use. For the previous dataset :
 ```
 !pip install datasets -q
 ```
@@ -13,7 +18,11 @@ First, we import the data we want to use. For example, we use :
 from datasets import load_dataset
 ds = load_dataset("qwedsacf/competition_math")
 ```
+### Connect the LLM via an API key
 We then use an API key to submit the exercises to an LLM. In this case, we use Gemini-1.5-Pro-exp or LIama 405B.
+
+
+### Extracting an exercise from the data for input to the LLM
 
 It's easy to extract exercises from loaded data, e.g. 
 ```
@@ -21,6 +30,7 @@ ds['train'][i]
 ```
 This makes it possible to give LLM an exercise from the data as input.
 
+### Extract the LLM response and store it in a csv file
 Then we retrieve the solution proposed by the model :
 
 ```
@@ -30,6 +40,11 @@ And we put it in a `csv` file
 ```
 csv_writer.writerow([response])
 ```
+
+We then use a `for` loop to iterate this over as many exercises as desired. For example, we can serially give the LLM the first 100 exercises of the training data with 100 API calls, and, at the end of each loop, store the LLM's response in the same `csv` file.
+
+
+### Building a prompt for the verification model
 
 ```
 def concatenate_cells(cell0, cell1, cell2):
@@ -41,7 +56,7 @@ def concatenate_cells(cell0, cell1, cell2):
 
 
 
-We use the MATHS dataset of [Hendrycks et al. (2021)](https://arxiv.org/pdf/2103.03874) which contains 12,500 mathematical problems, along with their level of difficulty, the branch to which they belong, and the solution to each problem.
+
 
 
 
