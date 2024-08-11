@@ -3,7 +3,7 @@
 ## Materials
 
 This directory accounts for several notebooks aimed at measuring the performance of a prompt 𝒫 on data. As it is, these are mathematical exercises and the data used contain both exercises and their answer keys.
-We use the MATHS dataset of [Hendrycks et al. (2021)](https://arxiv.org/pdf/2103.03874) which contains 12,500 mathematical problems, along with their level of difficulty, the branch to which they belong, and the solution to each problem.
+We use the MATHS dataset of [Hendrycks et al. (2021)](https://arxiv.org/pdf/2103.03874) which contains 12,500 mathematical problems, along with their level of difficulty, the branch to which they belong, and the solution to each problem. You can download it [from this link](https://huggingface.co/datasets/qwedsacf/competition_math).
 
 ## Procedure
 
