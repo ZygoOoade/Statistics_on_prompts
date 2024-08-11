@@ -43,7 +43,13 @@ We then use a `for` loop to iterate this over as many exercises as desired. For 
 <br>
 Once the loop is complete, the result is a table containing one column and 100 rows, where each row $`i`$ contains the LLM's response to the $`i`$-th exercise.
 <br>
-We can now put three columns in parallel: firstly, the statements of the 100 exercises; secondly, the LLM's answers to each of these 100 exercises; and thirdly, the answers to these 100 exercises. This can be visualized as follows: 
+We can now put three columns in parallel:
+* firstly, the statements of the 100 exercises;
+* secondly, the LLM's answers to each of these 100 exercises (here [this file](https://github.com/ZygoOoade/Statistics_on_prompts/blob/14b821865bdaece862d9acc1f1de008efef25762/Gemini-pro-exp-answers.csv) and [this file](https://github.com/ZygoOoade/Statistics_on_prompts/blob/14b821865bdaece862d9acc1f1de008efef25762/LIama_responses.csv) )
+* and thirdly, the answers to these 100 exercises (here [this file](https://github.com/ZygoOoade/Statistics_on_prompts/blob/14b821865bdaece862d9acc1f1de008efef25762/50_corrected_exercises.csv) )
+<br>
+This can be visualized as follows:
+
 | Exercise Statement | LLM's Solution | Correction |
 |:-------------------|:---------------|:-----------|
 | Exercise 1 statement | LLM's solution to exercise 1 | Correction to exercise 1 |
