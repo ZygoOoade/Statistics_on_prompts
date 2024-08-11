@@ -1,4 +1,18 @@
+This directory contains several notebooks designed :
+* using data to control exercises and their answers,
+* to compare the performance of several prompts.
+
+## Procedure
+
 We use the MATHS dataset of [Hendrycks et al. (2021)](https://arxiv.org/pdf/2103.03874) which contains 12,500 mathematical problems, along with their level of difficulty, the branch to which they belong, and the solution to each problem.
+
+```
+def concatenate_cells(cell0, cell1, cell2):
+    return (f"<Start of problem statement> {cell0} <End of problem statement>."
+            f"<Start of solution 1> {cell1} <End of solution 1>."
+            f"<Start of solution 2> {cell2} <End of solution 2>")
+```
+
 
 * In the file [Few_data_generation.ipynb](https://github.com/ZygoOoade/Statistics_on_prompts/blob/main/Few_data_generation.ipynb), we run the Gemini-Pro-1.5-exprimental-801 model on the first 10 dataset questions with a customized system prompt.
 As it stands, this file is limited to the generation of 10 responses on 10 problems from the dataset.
