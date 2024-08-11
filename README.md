@@ -51,10 +51,11 @@ We can now put three columns in parallel: firstly, the statements of the 100 exe
 | $`\hspace{1.6cm} ⋮`$ | $`\hspace{2.4cm} ⋮`$ | $`\hspace{2cm} ⋮`$ |
 | Exercise *n* statement | LLM's solution to exercise *n* | Correction to exercise *n* |
 
-We propose to "merge" together the statement of problem _i_, the LLM solution to this problem _i_ and the answer to this problem _i_ in a single message with a tagged format. This is achieved by the following code:
+
 
 ### Building prompts for the verification model
 
+We propose to "merge" together the statement of problem _i_, the LLM solution to this problem _i_ and the answer to this problem _i_ in a single message with a tagged format. This is achieved by the following code:
 ```
 def concatenate_cells(cell0, cell1, cell2):
     return (f"<Start of problem statement> {cell0} <End of problem statement>."
