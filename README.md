@@ -17,7 +17,7 @@ from datasets import load_dataset
 ds = load_dataset("qwedsacf/competition_math")
 ```
 ### Connect the LLM via an API key
-We then use an API key to submit the exercises to an LLM. In this case, we use Gemini-1.5-Pro-exp or LIama 405B.
+We then use an API key to submit the exercises to an LLM. In this case, we use **Gemini-1.5-Pro-exp**, **LIama 405B** and **Claude 3.5 Sonnet**
 
 
 ### Extracting an exercise from the data for input to the LLM
