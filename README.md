@@ -69,8 +69,27 @@ def concatenate_cells(cell0, cell1, cell2):
             f"<Start of solution 2> {cell2} <End of solution 2>")
 ```
 
+# Others
 
+* Other mathematical problems :
 
+https://huggingface.co/datasets/cais/mmlu
+
+* Hardest problems from this dataset :
+
+https://huggingface.co/datasets/lighteval/MATH-Hard
+
+* 200k mathematical problems in natural language :
+
+https://huggingface.co/datasets/microsoft/orca-math-word-problems-200k?row=0
+
+* 115 551 mathematical problems with solution in JSON format :
+
+https://huggingface.co/datasets/MARIO-Math-Reasoning/AlphaMath-Trainset
+
+* Gaokao 385 problems
+
+https://huggingface.co/datasets/MARIO-Math-Reasoning/Gaokao2023-Math-En
 
 You can also test the performance of other prompts and other models with this method, such as those offered by [OpenAI](https://platform.openai.com/docs/overview) , [Google](https://console.cloud.google.com/vertex-ai/model-garden) or [Anthropic](https://console.anthropic.com) which currently offer the best models to solve mathematical problems according to [the LMSYS leaderboard](https://chat.lmsys.org/?leaderboard).
 
